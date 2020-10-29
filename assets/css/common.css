@@ -68,7 +68,7 @@ header nav ul li a {font-size:24px;padding:5px 0;}
 @media(min-width:780px){
 	header .menu-btn {display: none;}
 
-	header {background:#fff;padding:10px 30px;}
+	header {background:#fff;padding:10px 20px;}
 	header .head-bar, header nav {display: inline-block;vertical-align: middle;}
 	header nav {margin-left: 10px;margin-top:5px;}
 	header nav ul li {display: inline-block;margin:0 10px;}
