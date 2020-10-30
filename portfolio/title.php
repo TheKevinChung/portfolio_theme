@@ -10,6 +10,11 @@
         </div>
         <div class="area-subtit">
             <p>Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque convallis a cras semper auctor. Libero id faucibus nisl tincidunt eget.</p>
+            <p><strong><em><u>Senectus et netus et malesuada.</u></em></strong></p>
+            <p><br></p>
+            <p><u>malesuada.</u></p>
+            <p><br></p>
+            <p class="ql-align-right">malesuada.</p>
         </div>
         <div class="area-video">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pS9To0VQTwg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -18,11 +23,13 @@
             <p>Sit amet nulla facilisi morbi tempus. Nulla facilisi cras fermentum odio eu. Etiam erat velit scelerisque in dictum non consectetur a erat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere.</p>
         </div>
         <div class="area-detail">
-            <img src="/assets/img/sample03.jpg" alt="">
-            <img src="/assets/img/sample04.jpg" alt="">
-            <p>Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque convallis a cras semper auctor. Libero id faucibus nisl tincidunt eget. Leo a diam sollicitudin tempor id. A lacus vestibulum sed arcu non odio euismod lacinia. In tellus integer feugiat scelerisque. Feugiat in fermentum posuere urna nec tincidunt praesent. Porttitor rhoncus dolor purus non enim praesent elementum facilisis. Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus. Et malesuada fames ac turpis egestas sed. Sit amet nisl suscipit adipiscing bibendum est ultricies. Arcu ac tortor dignissim convallis aenean et tortor at.</p>
-            <img src="/assets/img/sample05.jpg" alt="">
-            <p>Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere.</p>
+            <p><img src="/assets/img/sample03.jpg" alt=""></p>
+            <p><img src="/assets/img/sample04.jpg" alt=""></p>
+            <p><strong><em><u>Senectus et netus et malesuada.</u></em></strong></p>
+            <p><br></p>
+            <p><u>malesuada.</u></p>
+            <p><img src="/assets/img/sample05.jpg" alt=""></p>
+            <p class="ql-align-center">Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere.</p>
         </div>
     </section>
     

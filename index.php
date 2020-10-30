@@ -5,11 +5,10 @@
 <? include $_SERVER['DOCUMENT_ROOT'].'/inc/header.php'; ?>
 	<section class="main-banner">
 		<div class="cont">
-			Lorem ipsum dolor sit amet, <span style="text-decoration:underline">consectetur adipiscing elit</span><br>
-			Donec quis turpis tristique elit scelerisque elementum.<br>
-			Ut vitae erat et <span style="text-decoration:underline">orci blandit</span> semper.
-			Lorem ipsum dolor sit amet, <span style="text-decoration:underline">consectetur adipiscing elit</span><br>
-			Donec quis turpis tristique elit scelerisque elementum.<br>
+			<p><span style="color: rgb(0, 0, 0);">Lorem ipsum dolor sit amet,&nbsp;</span><u style="color: rgb(0, 0, 0);">consectetur adipiscing elit</u></p>
+			<p><span style="color: rgb(0, 0, 0);">Donec quis turpis tristique elit scelerisque elementum.</span></p>
+			<p><span style="color: rgb(0, 0, 0);">Ut vitae erat et&nbsp;</span><u style="color: rgb(0, 0, 0);">orci blandit</u><span style="color: rgb(0, 0, 0);">&nbsp;semper. Lorem ipsum dolor sit amet,&nbsp;</span><u style="color: rgb(0, 0, 0);">consectetur adipiscing elit</u></p>
+			<p><span style="color: rgb(0, 0, 0);">Donec quis turpis tristique elit scelerisque elementum.</span></p>
 		</div>
 	</section>
 	<section class="main-list">

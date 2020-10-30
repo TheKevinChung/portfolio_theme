@@ -3,6 +3,7 @@
 	background-image: url('../img/sample02.jpg'); background-repeat: no-repeat;}
 .main-banner .cont {font-size:28px;line-height:40px;position:absolute;left:0;top:50%;transform: translateY(-50%);
 	width:100%;box-sizing: border-box;padding:0 20px;}
+.main-banner .cont p, .main-banner .cont p * {font-size:28px;line-height:42px;}
 
 .main-list {margin-top: 30px; padding: 0 20px;}
 .main-list .item {margin-bottom: 20px;}
@@ -28,6 +29,7 @@
 @media (min-width: 1080px) {
 	.main-banner {height:calc(100% - 81px);}
 	.main-banner .cont {margin-top:-25px;font-size:38px;line-height:50px;}
+	.main-banner .cont p, .main-banner .cont p * {font-size:38px;line-height:54px;}
 
 	.main-list .item {width: 49%; margin-left: 2%; margin-bottom: 2%;}
 }
@@ -59,9 +61,10 @@
 .view-cont {padding: 40px 20px 20px; transition: padding 0.3s;}
 .view-cont .area-tit {margin-bottom: 50px;}
 .view-cont .area-tit h1 {font-size: 18px; line-height: 26px; font-weight: bold; margin-bottom: 20px;}
-.view-cont .area-tit p {font-size: 16px; line-height: 24px; color: #7d7d7d;}
+.view-cont .area-tit p, .view-cont .area-tit p * {font-size: 16px; line-height: 24px; color: #7d7d7d;}
 .view-cont .area-subtit {margin: 50px 0 70px;}
-.view-cont .area-subtit p, .view-cont .area-detail p, .view-cont .area-desc p {color: #464646; font-size: 14px; line-height: 22px;}
+.view-cont .area-subtit p, .view-cont .area-detail p, .view-cont .area-desc p,
+.view-cont .area-subtit p *, .view-cont .area-detail p *, .view-cont .area-desc p * {color: #464646; font-size: 14px; line-height: 22px;}
 .view-cont .area-video {position: relative; padding-bottom: 56.25%; margin: 50px 0 20px;}
 .view-cont .area-video iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
 .view-cont .area-desc {margin: 20px 0 50px;}
@@ -89,8 +92,9 @@
 	.view-cont .area-tit,
 	.view-cont .area-subtit {margin-bottom: 65px;}
 	.view-cont .area-tit h1 {font-size: 20px; line-height: 28px; margin-bottom: 18px;}
-	.view-cont .area-tit p {font-size: 18px; line-height: 26px; color: #7d7d7d;}
-	.view-cont .area-subtit p, .view-cont .area-detail p, .view-cont .area-desc p {font-size: 16px; line-height: 24px;}
+	.view-cont .area-tit p, .view-cont .area-tit p * {font-size: 18px; line-height: 26px; color: #7d7d7d;}
+	.view-cont .area-subtit p, .view-cont .area-detail p, .view-cont .area-desc p,
+	.view-cont .area-subtit p *, .view-cont .area-detail p *, .view-cont .area-desc p * {font-size: 16px; line-height: 24px;}
 	.view-cont .area-video {margin: 50px 0;}
 	.view-cont .area-desc {margin: 50px 0 100px;}
 	.view-cont .area-detail img {margin: 50px 0;}

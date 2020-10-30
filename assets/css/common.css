@@ -103,3 +103,8 @@ footer small {font-size: 12px; color: #313139;}
 @media (min-width: 780px) {
 	.btn-top {right: 40px;}
 }
+
+/* editor */
+.ql-align-justify {text-align: justify;}
+.ql-align-right {text-align: right;}
+.ql-align-center {text-align: center;}
