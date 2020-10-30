@@ -54,3 +54,44 @@
 	.about-me .about-list table td {padding: 8px;}
 	.about-me .about-list table td:first-of-type {min-width: 130px;}
 }
+
+/* portfolio view page */
+.view-cont {padding: 40px 20px 20px; transition: padding 0.3s;}
+.view-cont .area-tit {margin-bottom: 50px;}
+.view-cont .area-tit h1 {font-size: 18px; line-height: 26px; font-weight: bold; margin-bottom: 20px;}
+.view-cont .area-tit p {font-size: 16px; line-height: 24px; color: #7d7d7d;}
+.view-cont .area-subtit {margin: 50px 0 70px;}
+.view-cont .area-subtit p, .view-cont .area-detail p, .view-cont .area-desc p {color: #464646; font-size: 14px; line-height: 22px;}
+.view-cont .area-video {position: relative; padding-bottom: 56.25%; margin: 50px 0 20px;}
+.view-cont .area-video iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.view-cont .area-desc {margin: 20px 0 50px;}
+.view-cont .area-detail img {margin: 18px 0;}
+
+.sns-share {margin: 70px 0 50px; text-align: center;}
+.sns-share a {display: inline-block; padding: 10px;}
+.sns-share i {font-size: 24px; vertical-align: top;}
+.sns-share .link-copy {position: relative;}
+.sns-share .link-copy .pop {display: none; position: absolute; top: -30px; left: 50%; transform: translateX(-50%); white-space: nowrap; border-radius: 15px;
+	font-size: 14px; line-height: 19px; color: #fff; font-weight: 600; padding: 5px 16px; background: #9c9c9c;}
+.sns-share .link-copy .pop::after {position: absolute; bottom: -7px; left: 50%; transform: translateX(-50%); content: ''; border-top: 7px solid #9c9c9c; 
+	border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 0 solid transparent;}
+
+@media (min-width: 780px) {
+	.view-cont {max-width: 1200px; margin: 0 auto; padding: 80px 40px 40px;}
+	.view-cont .area-tit {display: inline-block; width: 32%; margin-right: -4px;vertical-align: top;}
+	.view-cont .area-subtit {display: inline-block; width: 63%; margin-left: 5%; margin-right: -4px; margin-top: 0; vertical-align: top;}
+	.view-cont .area-desc p {width: 63%; margin-left: 37%;}
+	
+	.sns-share a {padding: 10px 15px;}
+}
+
+@media (min-width: 1080px) {
+	.view-cont .area-tit,
+	.view-cont .area-subtit {margin-bottom: 65px;}
+	.view-cont .area-tit h1 {font-size: 20px; line-height: 28px; margin-bottom: 18px;}
+	.view-cont .area-tit p {font-size: 18px; line-height: 26px; color: #7d7d7d;}
+	.view-cont .area-subtit p, .view-cont .area-detail p, .view-cont .area-desc p {font-size: 16px; line-height: 24px;}
+	.view-cont .area-video {margin: 50px 0;}
+	.view-cont .area-desc {margin: 50px 0 100px;}
+	.view-cont .area-detail img {margin: 50px 0;}
+}

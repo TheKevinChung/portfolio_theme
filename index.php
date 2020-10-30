@@ -14,13 +14,13 @@
 	</section>
 	<section class="main-list">
 		<div class="item img01" data-aos="fade-up" data-aos-offset="100">
-			<a href="#none"></a>
+			<a href="/portfolio/title.php"></a>
 		</div>
 		<div class="item img02" data-aos="fade-up" data-aos-offset="100">
-			<a href="#none"></a>
+			<a href="/portfolio/title.php"></a>
 		</div>
 		<div class="item img03" data-aos="fade-up" data-aos-offset="100">
-			<a href="#none"></a>
+			<a href="/portfolio/title.php"></a>
 		</div>
 	</section>
 

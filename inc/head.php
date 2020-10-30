@@ -17,6 +17,7 @@
     <link href="/assets/css/layout.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/aos.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 
 	<!-- js -->
 	<script src="/assets/js/jquery-3.5.1.min.js"></script>
