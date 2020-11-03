@@ -17,7 +17,7 @@
 	<li class="nav-item">
 		<a class="nav-link" href="/adm/board/config/">
 			<i class="fas fa-cogs"></i>
-			<span>default setting</span>
+			<span>기본 설정</span>
 		</a>
 	</li>
 	<hr class="sidebar-divider">

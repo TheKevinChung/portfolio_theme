@@ -4,6 +4,31 @@
 @header('Cache-Control: no-store, no-cache, must-revalidate');
 @header('Pragma: no-cache');
 
+function fExit($msg="", $url="") {
+	global $mysqli;
+	$script = "";
+
+	if ($msg) {
+		$script .= "alert(\"{$msg}\");\n";
+	}
+
+	switch ($url) {
+		case "":
+			$script .= "history.back();\n";
+		break;
+		default :
+			$script .= "location.replace(\"{$url}\");\n";
+		break;
+	}
+?>
+	<script type="text/javascript" language="javascript">
+	<?php echo $script; ?>
+	</script>
+<?
+	if ($mysqli) @mysql_close($mysqli);
+	exit;
+}
+
 function libIsSafety() {
 	return
 		get_cfg_var('is_test');
