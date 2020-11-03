@@ -1,2 +1,6 @@
 ::placeholder {color:#d6d6de!important; opacity: 1;font-weight:300;letter-spacing:0.5px;}
 :-ms-input-placeholder {color:#d6d6de!important;font-weight:300;letter-spacing:0.5px;}
+table img {max-width:100px;}
+.table tr th {text-align: center;}
+.table tr td {vertical-align: middle;text-align: center;}
+.form-group img {max-width:230px}
