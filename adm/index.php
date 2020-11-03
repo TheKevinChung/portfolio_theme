@@ -35,3 +35,5 @@
 	</div>
 
 	<? include $_SERVER['DOCUMENT_ROOT'].'/adm/inc/footer.php'; ?>
+	</body>
+</html>

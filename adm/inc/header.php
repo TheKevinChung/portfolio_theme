@@ -21,6 +21,17 @@
 		</a>
 	</li>
 	<hr class="sidebar-divider">
+	<div class="sidebar-heading">
+		Board
+	</div>
+	<li class="nav-item">
+		<a class="nav-link" href="/adm/board/portfolio/">
+		<i class="fas fa-portrait"></i>
+			<span>포트폴리오</span>
+		</a>
+	</li>
+	<hr class="sidebar-divider">
+	<div class="version" id="version-ruangadmin">Version 1.1</div>
 </ul>
 <!-- Sidebar -->
 <div id="content-wrapper" class="d-flex flex-column">
