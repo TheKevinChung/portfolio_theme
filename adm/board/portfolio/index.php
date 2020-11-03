@@ -7,8 +7,12 @@
 
 	include_once $_SERVER['DOCUMENT_ROOT'].'/lib/database.php';
 
+	$r_cnt = libQuery("select count(*) as cnt from bbs where del = 'N'");
+	$cnt   = $r_cnt[0]['cnt'] ?? '';
+
 	$max_row = 30;
-	$page = (int)(@$_POST['page'] ?: 1);
+	$page 	 = $_GET['page'] ?? 1;
+	$totPage = ceil($cnt / $max_row);
 
 	$r = libQuery("
 		select *
@@ -90,9 +94,28 @@
 								</tbody>
 							</table>
 						</div>
-					</div>
-					<div class="text-center mt-4">
-						<a href="write.php" class="btn mb-1 btn-success">추가</a>
+						<div class="card-footer">
+						<? if ($cnt) { ?>
+							<div class="mt-3">
+								<nav aria-label="Page navigation example">
+									<ul class="pagination justify-content-end">
+									<? for ($a=1; $a <= $totPage; $a++){ ?>
+										<li class="page-item<?=$page == $a ? " active" : ""?>">
+											<a class="page-link" href="index.php?page=<?=$a?>"><?=$a?></a>
+										</li>
+									<? } ?>
+									</ul>
+								</nav>
+							</div>
+						<? } ?>
+						
+							<div class="text-center mt-5 mb-3">
+								<a href="write.php" class="btn mb-1 btn-success">
+									<i class="fas fa-plus"></i>
+									새 글 쓰기
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

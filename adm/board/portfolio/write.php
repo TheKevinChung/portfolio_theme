@@ -16,20 +16,19 @@
 		$arr = $r[0];
 		$m = $arr['metadata'];
 		$meta = unserialize(base64_decode($m));
-		// print_r($meta);
 	}
 ?>
 
 <? include $_SERVER['DOCUMENT_ROOT'].'/adm/inc/head.php'; ?>
 
-	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-	<style>
-		.ql-snow .ql-tooltip {z-index:9999}
-		.ql-snow b, .ql-snow strong {font-weight:bold;}
-		.form-control {color:#545454;}
-		.form-control:focus {color:#000;}
-		.ql-editor p {color:#000;font-weight:400}
-	</style>
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<style>
+	.ql-snow .ql-tooltip {z-index:9999}
+	.ql-snow b, .ql-snow strong {font-weight:bold;}
+	.form-control {color:#545454;}
+	.form-control:focus {color:#000;}
+	.ql-editor p {color:#000;font-weight:400}
+</style>
 
 </head>
 
