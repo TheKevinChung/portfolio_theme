@@ -11,7 +11,7 @@
 	$act = $_GET['ACT'] ?? 'n';
 
 	if ($idx && $act == 'u') {
-		$r = libQuery("select metadata, thumb from bbs where idx='".$idx."'");
+		$r = libQuery("select url_id, metadata, thumb from bbs where idx='".$idx."'");
 		
 		$arr = $r[0];
 		$m = $arr['metadata'];
@@ -50,9 +50,11 @@
 				<div class="col-lg-12 mb-4">
 					<div class="card mb-4">
 						<div class="card-body">
-							<form method="post" action="write_proc.php" enctype="multipart/form-data">
+							<form onsubmit="return bbsAddId(this)" method="post" action="write_proc.php" enctype="multipart/form-data">
 								<input type="hidden" name="ACT" value="<?=$act?>">
 								<input type="hidden" name="idx" value="<?=$idx ?? ""?>">
+								<input type="hidden" name="urlid" value="<?=$arr['url_id']?>">
+
 								<p class="font-weight-bold text-primary">상단 영역</p>
 								<hr>
 								<div class="form-group row ml-sm-1">
@@ -244,6 +246,80 @@ function selectLocalImage(target){
 		})
 	}
 }
+
+function bbsAddId(frm) {
+	var urlOrg 	= frm.urlid.value;
+	var tit 	= frm.tit.value;
+	var titArr 	= tit.split(' ');
+	var urlid = "";
+	var n = 0;
+	var t = "";
+	var regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+
+	for(var i in titArr) {
+		if (titArr[i] !== '') {
+
+			if (regExp.test(titArr[i])) {
+				t = titArr[i].replace(regExp, "");
+			} else {
+				t = titArr[i];
+			}
+
+			if (n > 0)
+				urlid +='-';
+
+			urlid += t;
+
+			n++;
+		}
+	}
+
+	if (urlid == urlOrg) {
+		frm.submit();
+		return false;
+	}
+
+	idCheckAjax(urlid, frm);
+
+	return false;
+}
+
+function idCheckAjax(id, frm) {
+	$.ajax({
+		type: 'post',
+		url: 'id_check.php',
+		data: {"id": id},
+		dataType: 'json',
+		success: function(data) {	
+			if (parseInt(data.cnt) > 0) {
+				bbsUpdateId(id, frm);
+			} else {
+				frm.urlid.value = id;
+				frm.submit();
+			}
+		},
+		error: function(err) {
+			console.error('Error ::: '+err);
+		}
+	})
+}
+
+function bbsUpdateId(id, frm) {
+	var idArr = id.split('-');
+	var idNum = idArr[idArr.length - 1];
+	var idNew;
+
+	if ($.isNumeric(idNum)) {
+		var last = "-"+idNum;
+		id = id.replace(last, '');
+		idNew = id+"-"+(parseInt(idNum) + 1);
+	} else {
+		idNew = id+"-1";
+	}
+
+	idCheckAjax(idNew, frm);
+}
+
 </script>
 
 </body>

@@ -9,7 +9,7 @@
 	</div>
 	<nav>
 		<ul>
-			<li><a href="/About/">About</a></li>
+			<li><a href="/About">About</a></li>
 			<li><a href="#none" target="_blank">Linked-in</a></li>
 			<li><a href="#none" target="_blank">Insta</a></li>
 		</ul>
