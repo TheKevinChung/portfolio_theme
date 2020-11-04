@@ -4,3 +4,4 @@ table img {max-width:100px;}
 .table tr th {text-align: center;}
 .table tr td {vertical-align: middle;text-align: center;}
 .form-group img {max-width:230px;max-height:220px;width:100%;}
+.form-group .ql-editor img {max-width: inherit;max-height: inherit;}
