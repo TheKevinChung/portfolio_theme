@@ -3,8 +3,9 @@
 
 	$ACT = $_POST['ACT'] ?? '';
 	$num = $_POST['num'] ?? '';
-	$contsTxt = trim($_POST['conts'] ?? '');
-	$conts = base64_encode(serialize($contsTxt));
+	$conts_list['edtColor'] = $_POST['edtColor'] ?? '';
+	$conts_list['txt'] = trim($_POST['conts'] ?? '');
+	$conts = base64_encode(serialize($conts_list));
 	$upfile = "empty";
 
 	if(count($_FILES) > 0) {

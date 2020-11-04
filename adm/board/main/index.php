@@ -88,8 +88,12 @@
 								<hr>
 								<div class="form-group box-quill">
 									<label>텍스트</label>
+									<div class="custom-control custom-switch mb-3">
+										<input type="checkbox" name="edtColor" value="dark" <?=@$conts['edtColor'] == 'dark' ? 'checked="checked"' : ''?> class="custom-control-input" id="themeSwitch">
+										<label class="custom-control-label" for="themeSwitch">Dark mode</label>
+									</div>
 									<div class="box-quitxt qui-1" style="height:150px"></div>
-									<textarea name="conts" style="display:none;"><?=$conts ?? ''?></textarea>
+									<textarea name="conts" style="display:none;"><?=$conts['txt'] ?? ''?></textarea>
 								</div>
 								
 								<div class="row justify-content-md-center mt-5">
@@ -149,6 +153,21 @@ $(function(){
 			txtArea.val(myEditor.html());
 		})
 	})
+
+	if ($('#themeSwitch').is(":checked")) {
+		$('.box-quill .ql-editor').css('background-color','#000');
+	}
+
+	$('#themeSwitch').on('change',function(){
+		var editor = $(this).parents('.box-quill').find('.ql-editor');
+
+		if ($(this).is(":checked")) {
+			editor.css('background-color','#000');
+		} else {
+			editor.css('background-color', '#fff');
+		}
+	})
+	
 })
 
 function thumbChange(target) {

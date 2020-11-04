@@ -15,7 +15,7 @@
 <? include $_SERVER['DOCUMENT_ROOT'].'/inc/header.php'; ?>
 	<section class="main-banner" style="background-image:url('<?=$d_main['upfile'] ?? ''?>')">
 	<? if($d_main['conts']) { ?>
-		<div class="cont"><?=$conts ?? ''?></div>
+		<div class="cont"><?=$conts['txt'] ?? ''?></div>
 	<? } ?>
 	
 	</section>
