@@ -9,6 +9,7 @@
 
 	$r = libQuery("select num, metadata from config");
 	$num = $r[0]['num'];
+	$meta = "";
 
 	if ($r) {
 		$m = $r[0]['metadata'];
@@ -41,12 +42,44 @@
 							<h6 class="m-0 font-weight-bold text-primary">사이트 설정</h6>
 						</div>
 						<div class="card-body">
-							<form action="_proc.php" method="post">
+							<form action="_proc.php" method="post" enctype="multipart/form-data">
 								<input type="hidden" name="ACT" value="<?=$r ? "u" : "n"?>">
 								<input type="hidden" name="num" value="<?=$num ? $num : ""?>">
 								<div class="form-group">
 									<label for="titInput">제목</label>
 									<input type="text" name="tit" value="<?=$meta['tit'] ? $meta['tit'] : ""?>" class="form-control" id="titInput" placeholder="title">
+								</div>
+								<div class="form-group">
+									<label for="titInput">파비콘</label>
+									<small>*확장자:ico,png &nbsp; *사이즈:16x16 / 32x32 / 144x144px</small>
+									
+									<div class="box-file">
+									<? if($meta['fav'] ?? '') { 
+										$imgArr = explode('/', $meta['fav']);
+										$imgN = $imgArr[5] ?? '';
+									?>
+										<div class="align-items-center mt-lg-3 mt-sm-5 row">
+											<div class="col-2">
+												<a href="<?=$meta['fav']?>" target="_blank">
+													<img src="<?=$meta['fav']?>" alt="">
+												</a>
+											</div>
+											<div class="col-xl-9 mt-3 mt-xl-0 row">
+												<div class="col-xl-6 col-lg-5">
+													<input class="form-control ml-xl-3" type="text" value="<?=$imgN?>" readonly>
+												</div>
+												<div class="col-xl-6 col-lg-5 mt-2 mt-md-0">
+													<a href="#" onclick="thumbChange($(this));" class="btn btn-danger btn-lg ml-xl-2 mt-sm-3 mt-lg-0">
+														<i class="fas fa-trash"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+									<? } else { ?>
+										<input class="form-control" type="file" name="fav" accept=".ico, .png">
+									<? } ?>
+									</div>
+									
 								</div>
 								<div class="form-group">
 									<label for="logoInput">로고</label>
@@ -112,11 +145,6 @@
 										</div>
 									</div>
 								<? } ?>
-									<!-- <div class="row justify-content-md-center">
-										<a href="#" class="btn btn-info btn-sm">
-											<i class="fas fa-plus"></i>
-										</a>
-									</div> -->
 								</div>
 								<hr>
 								<div class="form-group">
@@ -155,5 +183,14 @@
 		</div>
 	</div>
 	<? include $_SERVER['DOCUMENT_ROOT'].'/adm/inc/footer.php'; ?>
+<script>
+function thumbChange(target) {
+	var base = target.parents('.box-file');
+	var inputFile = '<input class="form-control" type="file" name="fav" accept=".ico, .png">';
+
+	base.empty().append(inputFile);
+}
+</script>
+
 	</body>
 </html>

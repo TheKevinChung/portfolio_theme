@@ -24,7 +24,7 @@
 			{
 				$tmp = $_FILES['imageFile']['tmp_name'];
 
-				if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0755, true);
+				if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0777, true);
 
 				if(move_uploaded_file($tmp, "{$path1}/{$path2}/{$name}.{$ext}"))
 				{       

@@ -29,7 +29,7 @@
 
 			$path1 = $root.'/uploads';
 			$path2 = 'portfolio'.date('/Y/m');
-			if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0755, true);
+			if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0777, true);
 			move_uploaded_file( $el['tmp_name'], "{$path1}/{$path2}/{$name}.{$ext}" );
 
 			$thumb = "/uploads/{$path2}/{$name}.{$ext}";

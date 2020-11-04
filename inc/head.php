@@ -9,12 +9,13 @@
 		$meta_site = unserialize(base64_decode($m_site));
 	}
 
-	$site_tit 		= $meta_site['tit'];
-	$site_logo 		= $meta_site['logo'];
-	$site_foot 		= $meta_site['footer'];
-	$site_snsDName 	= $meta_site['snsDName'];
-	$site_snsDUrl 	= $meta_site['snsDUrl'];
-	$site_snsS 		= $meta_site['snsS'];
+	$site_tit 		= $meta_site['tit'] ?? '';
+	$site_fav 		= $meta_site['fav'] ?? '';
+	$site_logo 		= $meta_site['logo'] ?? '';
+	$site_foot 		= $meta_site['footer'] ?? '';
+	$site_snsDName 	= $meta_site['snsDName'] ?? '';
+	$site_snsDUrl 	= $meta_site['snsDUrl'] ?? '';
+	$site_snsS 		= $meta_site['snsS'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -28,7 +29,7 @@
     <meta name="twitter:card" content="" />
     
 	<!-- Fav and touch icons -->
-	<link rel="shortcut icon" href="">
+	<link rel="shortcut icon" href="<?=$site_fav?>">
 	
 	<!-- css -->
     <link href="/assets/css/common.css" rel="stylesheet" type="text/css">
