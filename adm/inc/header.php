@@ -25,6 +25,12 @@
 		Board
 	</div>
 	<li class="nav-item">
+		<a class="nav-link" href="/adm/board/main/">
+		<i class="far fa-images"></i>
+			<span>메인 배너</span>
+		</a>
+	</li>
+	<li class="nav-item">
 		<a class="nav-link" href="/adm/board/portfolio/">
 		<i class="fas fa-portrait"></i>
 			<span>포트폴리오</span>

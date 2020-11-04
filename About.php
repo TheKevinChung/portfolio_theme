@@ -1,5 +1,5 @@
 <? include $_SERVER['DOCUMENT_ROOT'].'/inc/head.php'; ?>
-	<title></title>
+	<title><?=$site_tit?></title>
 </head>
 <body>
 <? include $_SERVER['DOCUMENT_ROOT'].'/inc/header.php'; ?>

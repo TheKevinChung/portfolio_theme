@@ -11,20 +11,24 @@
 	$meta_list['main'] 	= $_POST['main'] ?? '';
 	$meta = base64_encode(serialize($meta_list));
 	
-	$thumb = "";
-	$msg = "";
+	$thumb  = "empty";
+	$msg 	= "";
 
 	if(count($_FILES) > 0) {
 		$el = $_FILES['thumb'];
-		
-		$name  = uniqid();
-		$ext   = strtolower(substr($el['name'], strripos($el['name'], '.') + 1));
-		$path1 = $_SERVER['DOCUMENT_ROOT'].'uploads';
-		$path2 = 'portfolio'.date('/Y/m');
-		if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0755, true);
-		move_uploaded_file( $el['tmp_name'], "{$path1}/{$path2}/{$name}.{$ext}" );
 
-		$thumb = "/uploads/{$path2}/{$name}.{$ext}";
+		if (!$el['name']) {
+			$thumb = "";
+		} else {
+			$name  = uniqid();
+			$ext   = strtolower(substr($el['name'], strripos($el['name'], '.') + 1));
+			$path1 = $_SERVER['DOCUMENT_ROOT'].'uploads';
+			$path2 = 'portfolio'.date('/Y/m');
+			if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0755, true);
+			move_uploaded_file( $el['tmp_name'], "{$path1}/{$path2}/{$name}.{$ext}" );
+
+			$thumb = "/uploads/{$path2}/{$name}.{$ext}";
+		}
 	}
 
 	switch ($ACT) {
@@ -36,7 +40,7 @@
 			$idx  = $_POST['idx'];
 			$date = date('Y-m-d H:i:s');
 
-			if($thumb) {
+			if($thumb !== 'empty') {
 				$r = libQuery("update bbs set url_id='$urlid', metadata='$meta', thumb='$thumb', mod_date='$date' where idx='$idx' ");
 			} else {
 				$r = libQuery("update bbs set url_id='$urlid', metadata='$meta', mod_date='$date' where idx='$idx' ");
