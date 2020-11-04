@@ -4,7 +4,7 @@
 		<div class="sidebar-brand-text mx-3">Admin</div>
 	</a>
 	<hr class="sidebar-divider my-0">
-	<li class="nav-item active">
+	<li class="nav-item<?=strpos($_SERVER['PHP_SELF'], "adm/index.php") ? ' active' : ''?>">
 		<a class="nav-link" href="/adm/index.php">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Dashboard</span>
@@ -14,7 +14,7 @@
 	<div class="sidebar-heading">
 		Setting
 	</div>
-	<li class="nav-item">
+	<li class="nav-item<?=strpos($_SERVER['PHP_SELF'], "adm/board/config/") ? ' active' : ''?>">
 		<a class="nav-link" href="/adm/board/config/">
 			<i class="fas fa-cogs"></i>
 			<span>기본 설정</span>
@@ -24,13 +24,19 @@
 	<div class="sidebar-heading">
 		Board
 	</div>
-	<li class="nav-item">
+	<li class="nav-item<?=strpos($_SERVER['PHP_SELF'], "adm/board/main/") ? ' active' : ''?>">
 		<a class="nav-link" href="/adm/board/main/">
 		<i class="far fa-images"></i>
 			<span>메인 배너</span>
 		</a>
 	</li>
-	<li class="nav-item">
+	<li class="nav-item<?=strpos($_SERVER['PHP_SELF'], "adm/board/about/") ? ' active' : ''?>">
+		<a class="nav-link" href="/adm/board/about/">
+		<i class="fas fa-award"></i>
+			<span>경력사항</span>
+		</a>
+	</li>
+	<li class="nav-item<?=strpos($_SERVER['PHP_SELF'], "adm/board/portfolio/") ? ' active' : ''?>">
 		<a class="nav-link" href="/adm/board/portfolio/">
 		<i class="fas fa-portrait"></i>
 			<span>포트폴리오</span>
