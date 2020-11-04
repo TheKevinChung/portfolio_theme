@@ -19,7 +19,7 @@
 			<h2><?=$meta['tit'] ?? ''?></h2>
 			<table>
 				<tbody>
-				<? for ($a=0; $a<count($meta['name']);$a++) { ?>
+				<? for ($a=0; $a<@count($meta['name']);$a++) { ?>
 					<tr>
 						<td><p><?=$meta['name'][$a] ?? ''?></p></td>
                         <td><p><?=$meta['desc'][$a] ?? ''?></p></td>
