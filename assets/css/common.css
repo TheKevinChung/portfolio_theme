@@ -34,7 +34,9 @@ button {border:none;}
 header {transition: padding 0.3s;}
 header .head-bar .logo {display: inline-block;}
 header .head-bar .logo a {padding:12px 20px;font-size: 22px;line-height:26px;font-weight: bold;}
-header nav ul li a {font-size:24px;padding:5px 0;}
+header nav ul li a {position:relative;font-size:24px;padding:5px 0;}
+header nav ul li a::before {content:"";display: block;position: absolute;left:50%;top:50%;transform: translate(-50%,-50%) rotate(45deg);background:#000;height:0;width:1px;transition: height 0.3s;}
+header nav ul li.active a::before {height: 200%;}
 
 @media(max-height:387px) {
 	header nav {position: relative;margin-top:50px;overflow:auto;height:300px;top:0;}
@@ -61,7 +63,7 @@ header nav ul li a {font-size:24px;padding:5px 0;}
 	
 	header nav {display: none;position: fixed;top:50px;width:100%;height:calc(100% - 50px);background:#fff;z-index: 10;}
 	header nav ul {position: absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin-top:-20px;text-align: center;}
-    header nav ul li {margin:5px 0;}
+	header nav ul li {margin:5px 0;}
     
     header + section {margin-top:50px;}
 }
@@ -73,11 +75,10 @@ header nav ul li a {font-size:24px;padding:5px 0;}
 	header .head-bar, header nav {display: inline-block;vertical-align: middle;}
 	header nav {margin-left: 10px;margin-top:5px;}
 	header nav ul li {display: inline-block;margin:0 10px;}
-	header nav ul li a {font-size:18px;padding:5px 8px;position: relative;}
+	header nav ul li a {font-size:18px;padding:5px 8px;}
 	
-	header nav ul li a::before {content:"";display: block;position: absolute;left:50%;top:50%;transform: translate(-50%,-50%) rotate(45deg);background:#000;height:0;width:1px;transition: height 0.3s;}
 	header nav ul li a:hover::before {height:200%;}
-	header nav ul li a:active:hover::before {height:0;} 
+	header nav ul li a:active:hover::before {height:0;}
 }
 
 @media(min-width:1080px){

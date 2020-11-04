@@ -80,7 +80,7 @@
 	border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 0 solid transparent;}
 
 @media (min-width: 780px) {
-	.view-cont {max-width: 1200px; margin: 0 auto; padding: 80px 40px 40px;}
+	.view-cont {max-width: 1470px; margin: 0 auto; padding: 80px 40px 40px;}
 	.view-cont .area-tit {display: inline-block; width: 32%; margin-right: -4px;vertical-align: top;}
 	.view-cont .area-subtit {display: inline-block; width: 63%; margin-left: 5%; margin-right: -4px; margin-top: 0; vertical-align: top;}
 	.view-cont .area-desc p {width: 63%; margin-left: 37%;}
