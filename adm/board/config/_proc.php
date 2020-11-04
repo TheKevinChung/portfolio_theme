@@ -1,14 +1,14 @@
 <?
 	include_once $_SERVER['DOCUMENT_ROOT'].'/lib/database.php';
 
-	$ACT = @$_POST['ACT'];
+	$ACT = $_POST['ACT'] ?? '';
 
-	$meta_list['tit'] 	 	= @$_POST['tit'];
-	$meta_list['logo'] 	 	= @$_POST['logo'];
-	$meta_list['footer'] 	= @$_POST['footer'];
-	$meta_list['snsDName']	= @$_POST['snsDName'];
-	$meta_list['snsDUrl']	= @$_POST['snsDUrl'];
-	$meta_list['snsS'] 	 	= @$_POST['snsS'];
+	$meta_list['tit'] 	 	= $_POST['tit'] ?? '';
+	$meta_list['logo'] 	 	= $_POST['logo'] ?? '';
+	$meta_list['footer'] 	= $_POST['footer'] ?? '';
+	$meta_list['snsDName']	= $_POST['snsDName'] ?? '';
+	$meta_list['snsDUrl']	= $_POST['snsDUrl'] ?? '';
+	$meta_list['snsS'] 	 	= $_POST['snsS'] ?? '';
 	$meta = base64_encode(serialize($meta_list));
 
 	switch ($ACT) {

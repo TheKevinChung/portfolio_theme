@@ -62,8 +62,8 @@
 									<label>SNS 바로가기 링크</label>
 								<?
 									if ($meta['snsDName'][0]) {
-										$snsDName = $meta['snsDName'];
-										$snsDUrl  = @$meta['snsDUrl'];
+										$snsDName = $meta['snsDName'] ?? '';
+										$snsDUrl  = $meta['snsDUrl'] ?? '';
 
 										for ($i=0; $i<count($snsDName); $i++) {
 								?>
