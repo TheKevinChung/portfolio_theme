@@ -1,5 +1,8 @@
 <? include $_SERVER['DOCUMENT_ROOT'].'/inc/head.php'; ?>
-	<title></title>
+	<title><?=$site_tit?></title>
+<?
+	$r = libQuery("select url_id, thumb from bbs where del = 'N' order by idx desc");
+?>
 </head>
 <body>
 <? include $_SERVER['DOCUMENT_ROOT'].'/inc/header.php'; ?>
@@ -11,17 +14,18 @@
 			<p><span style="color: rgb(0, 0, 0);">Donec quis turpis tristique elit scelerisque elementum.</span></p>
 		</div>
 	</section>
+	<? if (count($r) > 0) { ?>
 	<section class="main-list">
-		<div class="item img01" data-aos="fade-up" data-aos-offset="100">
-			<a href="/portfolio/title.php"></a>
+		<? for($i=0;$i<count($r);$i++){ 
+			$data = $r[$i];
+		?>
+		<div class="item" data-aos="fade-up" data-aos-offset="100">
+			<a style="background-image:url('<?=$data['thumb']?>')" href="/portfolio/<?=$data['url_id']?>"></a>
 		</div>
-		<div class="item img02" data-aos="fade-up" data-aos-offset="100">
-			<a href="/portfolio/title.php"></a>
-		</div>
-		<div class="item img03" data-aos="fade-up" data-aos-offset="100">
-			<a href="/portfolio/title.php"></a>
-		</div>
+		<? } ?>
 	</section>
+	<? } ?>
 
-	<div class="btn-top"></div>
-<? include $_SERVER['DOCUMENT_ROOT'].'/inc/footer.php'; ?>
+	<? include $_SERVER['DOCUMENT_ROOT'].'/inc/footer.php'; ?>
+	</body>
+</html>

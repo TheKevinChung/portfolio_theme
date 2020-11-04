@@ -1,5 +1,5 @@
+	<div class="btn-top"></div>
+
 	<footer>
-		<small>COPYRIGHT 2020 KEVIN CHUNG</small>
+		<small><?=$site_foot?></small>
 	</footer>
-</body>
-</html>

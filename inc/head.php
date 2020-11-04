@@ -1,3 +1,21 @@
+<?
+	include_once $_SERVER['DOCUMENT_ROOT'].'/lib/database.php';
+
+	$r_site = libQuery("select metadata from config where num='1'");
+	
+	if ($r_site) {
+		$data_site = $r_site[0];
+		$m_site = $data_site['metadata'];
+		$meta_site = unserialize(base64_decode($m_site));
+	}
+
+	$site_tit 		= $meta_site['tit'];
+	$site_logo 		= $meta_site['logo'];
+	$site_foot 		= $meta_site['footer'];
+	$site_snsDName 	= $meta_site['snsDName'];
+	$site_snsDUrl 	= $meta_site['snsDUrl'];
+	$site_snsS 		= $meta_site['snsS'];
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>

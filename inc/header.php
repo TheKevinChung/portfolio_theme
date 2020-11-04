@@ -1,6 +1,6 @@
 <header>
 	<div class="head-bar">
-		<p class="logo"><a href="/">logo</a></p>
+		<p class="logo"><a href="/"><?=$site_logo?></a></p>
 		<div class="menu-btn">
 			<p class="menu-inner">
 				<span></span>
@@ -10,8 +10,9 @@
 	<nav>
 		<ul>
 			<li><a href="/About">About</a></li>
-			<li><a href="#none" target="_blank">Linked-in</a></li>
-			<li><a href="#none" target="_blank">Insta</a></li>
+		<? for($i=0; $i<count($site_snsDName); $i++) { ?>
+			<li><a href="<?=$site_snsDUrl[$i] ?? '#none'?>" target="_blank"><?=$site_snsDName[$i]?></a></li>
+		<? } ?>
 		</ul>
 	</nav>
 </header>
