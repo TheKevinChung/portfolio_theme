@@ -105,6 +105,16 @@ footer small {font-size: 12px; color: #313139;}
 }
 
 /* editor */
-.ql-align-justify {text-align: justify;}
-.ql-align-right {text-align: right;}
-.ql-align-center {text-align: center;}
+.ql-editor {padding: 0!important;}
+
+@media (max-width: 779px) {
+	.ql-editor .ql-indent-1:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-2:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-3:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-4:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-5:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-6:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-7:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-8:not(.ql-direction-rtl),
+	.ql-editor .ql-indent-9:not(.ql-direction-rtl) {padding-left: 2em!important;}
+}
