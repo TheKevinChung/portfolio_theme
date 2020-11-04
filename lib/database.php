@@ -59,7 +59,7 @@ function libConnect() {
 	global $mysqli;
 
 	if (!$mysqli) {
-		$mysqli = @mysqli_connect('localhost', 'chungkevin', 'chungkevin#!@', 'chungkevin') or include('err_db.php');
+		$mysqli = @mysqli_connect('db.chungkevin.com', 'chungkevin', 'chungkevin!@#', 'dbchungkevin') or include('err_db.php');
 		@mysqli_set_charset($mysqli, 'utf8');
 	}
 	return $mysqli ;
