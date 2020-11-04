@@ -10,7 +10,11 @@
 	<nav>
 		<ul>
 			<li <?=strpos($_SERVER['PHP_SELF'], "About") ? 'class="active"' : ''?>><a href="/About">About</a></li>
-		<? for($i=0; $i<count($site_snsDName); $i++) { ?>
+		<? for($i=0; $i<count($site_snsDName); $i++) { 
+			
+			if($site_snsDName[$i] == "")
+				continue;
+		?>
 			<li><a href="<?=$site_snsDUrl[$i] ?? '#none'?>" target="_blank"><?=$site_snsDName[$i]?></a></li>
 		<? } ?>
 		</ul>
