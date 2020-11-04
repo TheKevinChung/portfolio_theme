@@ -20,7 +20,12 @@
 		} else {
 			$name  = uniqid();
 			$ext   = strtolower(substr($el['name'], strripos($el['name'], '.') + 1));
-			$path1 = $_SERVER['DOCUMENT_ROOT'].'uploads';
+			$root  = $_SERVER['DOCUMENT_ROOT'];
+			if (substr($root, -1) == '/') {
+				$root = substr_replace($root, '', -1);
+			}
+
+			$path1 = $root.'/uploads';
 			$path2 = 'about'.date('/Y/m');
 			if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0755, true);
 			move_uploaded_file( $el['tmp_name'], "{$path1}/{$path2}/{$name}.{$ext}" );

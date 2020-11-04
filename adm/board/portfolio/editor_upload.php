@@ -1,5 +1,10 @@
 <?
-	$path1 = $_SERVER['DOCUMENT_ROOT'].'uploads';
+	$root  = $_SERVER['DOCUMENT_ROOT'];
+	if (substr($root, -1) == '/') {
+		$root = substr_replace($root, '', -1);
+	}
+
+	$path1 = $root.'/uploads';
 	$path2 = 'portfolio'.date('/Y/m');
 
 	$valid_formats = array("jpg", "png", "gif", "bmp", "jpeg", "PNG", "JPEG", "JPG", "GIF");

@@ -17,7 +17,6 @@
 		$data 	= $r[0];
 		$m 		= $data['metadata'];
 		$meta 	= unserialize(base64_decode($m));
-		print_r($meta);
 	}
 ?>
 
