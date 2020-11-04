@@ -3,12 +3,18 @@
 	$id = $_GET['url'] ?? '';
 	$id = str_replace('/','',$id);
 
-	$r = libQuery("select idx, url_id, metadata from bbs where url_id='$id' and del='N'");
+	$r = libQuery("select idx, url_id, metadata, view_cnt from bbs where url_id='$id' and del='N'");
 
 	if ($r) {
 		$data = $r[0];
 		$m = $data['metadata'];
 		$meta = unserialize(base64_decode($m));
+
+		$idx = $data['idx'];
+		$view = (int)$data['view_cnt'];
+		$viewN = $view + 1;
+		$r_view = libQuery("update bbs set view_cnt='$viewN' where idx='$idx' ");
+
 	} else {
 		fExit('The page does not exist.', '/');
 	}
