@@ -9,7 +9,7 @@
 	</div>
 	<nav>
 		<ul>
-			<li><a href="/About">About</a></li>
+			<li <?=strpos($_SERVER['PHP_SELF'], "About") ? 'class="active"' : ''?>><a href="/About">About</a></li>
 		<? for($i=0; $i<count($site_snsDName); $i++) { ?>
 			<li><a href="<?=$site_snsDUrl[$i] ?? '#none'?>" target="_blank"><?=$site_snsDName[$i]?></a></li>
 		<? } ?>

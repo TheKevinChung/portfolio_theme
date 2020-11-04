@@ -12,6 +12,8 @@
 	} else {
 		fExit('The page does not exist.', '/');
 	}
+
+	$curUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
 
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
@@ -58,7 +60,7 @@
 		<? } ?>
 
 		<? if($site_snsS[3] ?? '') { ?>
-        <a href="mailto:someone@example.com" class="mail">
+        <a href="mailto:?Subject=<?=$meta['tit']?>&Body=<?=$curUrl?>" class="mail">
             <i class="far fa-envelope"></i>
         </a>
 		<? } ?>
