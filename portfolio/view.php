@@ -19,7 +19,13 @@
 		fExit('The page does not exist.', '/');
 	}
 
-	$curUrl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+	if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') {
+		$h = "https://";
+	} else {
+		$h = "http://";
+	}
+
+	$curUrl = $h.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 ?>
 
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
