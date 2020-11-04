@@ -9,7 +9,9 @@
 		$data = $r[0];
 		$m = $data['metadata'];
 		$meta = unserialize(base64_decode($m));
-	}	
+	} else {
+		fExit('The page does not exist.', '/');
+	}
 ?>
 
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">

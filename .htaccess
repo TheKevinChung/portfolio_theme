@@ -1,3 +1,7 @@
+Errordocument 403 /
+Errordocument 404 /
+Errordocument 500 /
+
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 
