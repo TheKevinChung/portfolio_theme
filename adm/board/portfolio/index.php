@@ -66,7 +66,9 @@
 								if($r) {
 
 									for ($i=0; $i<count($r); $i++) {
-										$num = $i+1;
+										$num = $cnt - ($max_row * ($page - 1));
+										$num = $num - $i;
+
 										$arr = $r[$i];
 										$m = $arr['metadata'];
 										$meta = unserialize(base64_decode($m));
