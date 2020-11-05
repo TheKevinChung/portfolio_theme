@@ -77,8 +77,8 @@
 											<img src="<?=$arr['thumb']?>" alt="">
 										</td>
 										<td><a href="/portfolio/<?=$arr['url_id']?>" target="_blank"><?=$meta['tit']?></a></td>
-										<td><?=date_format(date_create($arr['reg_date']), 'Y-m-d')?></td>
-										<td><?=date_format(date_create($arr['mod_date']), 'Y-m-d')?></td>
+										<td><?=date_format(date_create($arr['reg_date']), 'Y-m-d H:i')?></td>
+										<td><?=date_format(date_create($arr['mod_date']), 'Y-m-d H:i')?></td>
 										<td><?=$arr['view_cnt']?></td>
 										<td>
 											<a href="write.php?ACT=u&idx=<?=$arr['idx']?>" class="btn btn-sm btn-primary">수정</a>&nbsp;
