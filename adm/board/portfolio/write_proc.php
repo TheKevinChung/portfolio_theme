@@ -16,24 +16,7 @@
 
 	if(count($_FILES) > 0) {
 		$el = $_FILES['thumb'];
-
-		if (!$el['name']) {
-			$thumb = "";
-		} else {
-			$name  = uniqid();
-			$ext   = strtolower(substr($el['name'], strripos($el['name'], '.') + 1));
-			$root  = $_SERVER['DOCUMENT_ROOT'];
-			if (substr($root, -1) == '/') {
-				$root = substr_replace($root, '', -1);
-			}
-
-			$path1 = $root.'/uploads';
-			$path2 = 'portfolio'.date('/Y/m');
-			if (!is_dir("{$path1}/{$path2}")) mkdir("{$path1}/{$path2}", 0777, true);
-			move_uploaded_file( $el['tmp_name'], "{$path1}/{$path2}/{$name}.{$ext}" );
-
-			$thumb = "/uploads/{$path2}/{$name}.{$ext}";
-		}
+		$thumb = libFileUpload($el, 'portfolio');
 	}
 
 	switch ($ACT) {

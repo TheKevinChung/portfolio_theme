@@ -17,7 +17,7 @@
 		
 		if(strlen($orgName))
 		{   
-			$name  = uniqid();
+			$name  = date('dhi').'_'.uniqid();
 			$ext   = strtolower(substr($orgName, strripos($orgName, '.') + 1));
 	
 			if(in_array($ext,$valid_formats))
